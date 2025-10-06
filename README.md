@@ -5,6 +5,3 @@ TEKNOFEST is Türkiye’s premier and the world’s largest aerospace and techno
 I was a member of the 2024–2025 Vertical Landing Rocket Team, serving as the Avionics System Team Lead.
 
 I developed a program that includes rocket-related formulas and performs iterative calculations based on user input to support our mechanical team’s analysis.
-
-
-
