@@ -34,7 +34,6 @@ int main(void)
 	 
 	do //Döngü başlangıcı
 	{
-		
 		if(counter == 0) //initialize
 		{
 			current_speed = (previous_speed + (previous_acceleration*0));
@@ -44,8 +43,6 @@ int main(void)
 		// 2.Fonksiyon (döngü içinde)
 		current_speed = (previous_speed + (previous_acceleration*time_difference));
 	}
-	
-	
 	
 	if(counter == 1)//initialize
 	{
@@ -57,8 +54,6 @@ int main(void)
 		current_height = (previous_height - (previous_speed * time_difference)) - ((0.5)* (previous_acceleration*(pow(time_difference,2))));
 	}
 	
-	
-	
 		//4. fonksiyon (döngü içinde)
 	    F_d = 0.5 * 1.225 * 0.75 * area * pow(current_speed, 2);
 	    
@@ -67,7 +62,6 @@ int main(void)
 		
 		//6. fonksiyon (döngü içinde)
         current_acceleration = F_net/m;
-        
         
 	    //Display
 	    printf("---------------------------------------------The values are---------------------------------------------\n");
@@ -104,11 +98,6 @@ int main(void)
 	//Şuanki hızımız bir sonraki adımımızın önceki hızımız oluyor
 	previous_speed = current_speed;	
 	
-	
-	
-	
 	printf("========================================================================================================\n\n\n");} while (menu != 1); //Döngü bitişi
-		
-		
 		return 0;
  }
