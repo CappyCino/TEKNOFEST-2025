@@ -45,15 +45,11 @@ double F_thrust;
 double F_net;
 };
 
-
 double F_g;
 int checkpoint_step;
 double checkpoint_time;
 
-int adimsayar = 0;
-
-
-
+int adimsayar = 0; //Counter
 
 //Main function
 int main(void){
@@ -65,13 +61,9 @@ int main(void){
 	struct current_values current[100] = {0,0,0,0};
 	struct f_values force[100] = {0,0,0};
 	
-	
-	
     F_g = constant.m*constant.g;
     
-    do{
-    	
-	
+    do{	
     	//T = 0
     	if(tools.counter == 0){
     		
@@ -80,17 +72,14 @@ int main(void){
 		}
 		// İlk adımdan sonrakiler
     	
-    	
     	else{
     	current[adimsayar].current_speed = previous[adimsayar].previous_speed + (previous[adimsayar].previous_acceleration*constant.time_difference);
         current[adimsayar].current_height = (previous[adimsayar].previous_height - (previous[adimsayar].previous_speed*constant.time_difference)) - ((0.5)*(previous[adimsayar].previous_acceleration*(pow(constant.time_difference,2))));
 		}
 		
-		
 		force[adimsayar].F_d = 0.5*1.225*0.75*constant.area*pow(current[adimsayar].current_speed,2);
 		force[adimsayar].F_net = F_g - force[adimsayar].F_thrust - force[adimsayar].F_d;
 		current[adimsayar].current_acceleration = force[adimsayar].F_net/constant.m;
-		
 		
 		 //Display
 	    printf("---------------------------------------------The values are---------------------------------------------\n");
@@ -138,11 +127,7 @@ int main(void){
 	    if(tools.devam == 1)
 	    {
 	    	adimsayar = checkpoint_step;
-		}
-	    
-	
-		
-		}
+		} }
 		
 		// Anlık zamanımız bir sonraki döngü için zaman farkı kadar artıyor
 		current[adimsayar+1].current_time = current[adimsayar].current_time + constant.time_difference;
@@ -158,7 +143,6 @@ int main(void){
 	    printf("========================================================================================================\n\n\n");
 	}while(tools.menu != 9);
 	
-	
-	
 	return 0;
 }
+
